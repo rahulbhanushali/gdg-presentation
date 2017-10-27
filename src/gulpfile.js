@@ -1,15 +1,11 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var reload      = browserSync.reload;
+var gulp = require('gulp');
+var bs = require('browser-sync').create(); // create a browser sync instance.
 
-gulp.task('serve', ['sass'], function() {
-    browserSync.init({
-        server: "./"
+gulp.task('browser-sync', function() {
+    bs.init({
+        // server: {
+        //     baseDir: "./"
+        // },
+        proxy: "localhost:3000"
     });
-
-    // gulp.watch("app/scss/*.scss", ['sass']);
-    // gulp.watch("app/*.html").on('change', reload);
-    gulp.watch("*.js").on('change', reload);
 });
-
-gulp.task('default', ['serve']);

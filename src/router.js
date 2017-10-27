@@ -10,7 +10,7 @@ router.use(function timeLog (req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-  res.sendFile(`${__dirname}/index.html`)
+  res.sendFile(`${__dirname}/public/index.html`)
 })
 
 // define the about route
